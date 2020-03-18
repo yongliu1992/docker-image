@@ -15,4 +15,4 @@ RUN apk update && apk upgrade \
     && apk del build-deps \
     && rm -rf /var/cache/apk/*
 
-CMD  ["redis-cli","-p","7000"]
+CMD  ["redis-cli","-p","7000","-h","172.26.88.185"]
