@@ -1,0 +1,13 @@
+ 
+ 
+ jenkins 现在仓库里有2个公开版本
+ v1 纯jekins ,jenkins版本 2.222.1，系统linux center OS8
+ v1_gcc是内置gcc（go test 需要使用 所以安装了）
+ 预装了 golang gogs-webhook git permissive-script-security trilead-api command-launcher credentials 等jenkins插件
+
+ docker pull registry.cn-zhangjiakou.aliyuncs.com/gocode/jenkins2:v1
+ docker pull registry.cn-zhangjiakou.aliyuncs.com/gocode/jenkins2:v1_gcc
+ 使用root进入容器方法 docker exec -itu root containerid /bin/bash
+ 默认使用jenkins用户 dokcer  exec -it  containerid /bin/bash
+6055 是宿主机端口 
+docker run -p 6055:8080 -p 50000:50000  --name youwantname --env JAVA_OPTS='-Dfile.encoding=UTF-8 -Dsun.jnu.encoding=UTF-8'   -v /home/jenkins_home:/var/jenkins_home -it  -d registry.cn-zhangjiakou.aliyuncs.com/gocode/jenkins2:v1_gcc
