@@ -1,5 +1,5 @@
 FROM jenkins/jenkins:lts-centos
 USER root
-RUN /bin/sh -c yum check-update  &&yum -y install  gcc gcc-c++ &&yum -y install java-11-openjdk-devel java-11-openjdk && wget https://resly.oss-us-east-1.aliyuncs.com/jdk-11.0.6_linux-x64_bin.rpm && yum localinstall jdk-11.0.6_linux-x64_bin.rpm &&yum clean all
+RUN /bin/sh -c yum check-update  &&yum -y install  gcc gcc-c++ &&yum -y install java-11-openjdk-devel java-11-openjdk && wget https://resly.oss-us-east-1.aliyuncs.com/jdk-11.0.6_linux-x64_bin.rpm && yum -y localinstall jdk-11.0.6_linux-x64_bin.rpm &&yum clean all
 USER jenkins
 RUN /usr/local/bin/install-plugins.sh golang gogs-webhook git permissive-script-security trilead-api command-launcher credentials sonar
