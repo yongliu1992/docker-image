@@ -10,4 +10,5 @@
  使用root进入容器方法 docker exec -itu root containerid /bin/bash
  默认使用jenkins用户 dokcer  exec -it  containerid /bin/bash
 6055 是宿主机端口 
-docker run -p 6055:8080 -p 50000:50000  --name youwantname --env JAVA_OPTS='-Dfile.encoding=UTF-8 -Dsun.jnu.encoding=UTF-8'   -v /home/jenkins_home:/var/jenkins_home -it  -d registry.cn-zhangjiakou.aliyuncs.com/gocode/jenkins2:v1_gcc
+docker run -it -p 6055:8080 -p 5000:5000 --name jenkins5 --env JAVA_OPTS='-Dfile.encoding=UTF-8 -Dsun.jnu.encoding=UTF-8'   -v /data/soft/jenkins_home:/var/jenkins_home -d registry.cn
+-zhangjiakou.aliyuncs.com/gocode/jenkins2:v1_gcc
